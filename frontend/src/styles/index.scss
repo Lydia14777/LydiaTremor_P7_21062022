@@ -1,11 +1,90 @@
-@import './settings';
-@import './pages/home';
-@import './components/navbar.scss';
-@import './components/card.scss';
-@import './components/connectionForm.scss';
-@import './pages/profil.scss';
-@import './components/newPostForm.scss';
-@import './components/friendsHint.scss';
-@import './components/trends.scss';
-@import './components/leftNav.scss';
-@import './pages/trending.scss';
+$font-1: "font-1", sans-serif;
+$font-2: "font-2", serif;
+$font-3: "font-3", serif;
+
+$color-1: #FD2D01;
+$color-2:  #FFD7D7;
+$color-3:  #4E5166;
+$black: rgb(75, 71, 71);
+$white: white;
+$shadow: rgb(214, 71, 52);
+
+body {
+    font-family: "font-1";
+    margin: 20px;
+    padding: 0;
+    color: $black;
+}
+
+@font-face {
+    font-family: "font-1";
+    src: url(./assets/Lato/Lato-Black.ttf);
+}
+
+@font-face {
+    font-family: "font-2";
+    src: url(./assets/Lato/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: "font-3";
+    src: url(./assets/Lato/Lato-Italic.ttf);
+}
+
+.active-btn {
+    background: $color-1;
+}
+ 
+/*
+button,
+input[type="submit"] {
+    background: $color-2;
+    color: $color-1;
+    font-family: $font-3;
+    cursor: pointer;
+    border-radius: 20px;
+  
+    &:hover {
+      background: $color-1;
+      color: $color-2;
+    }
+}  
+*/
+  
+  
+  
+input,
+textarea {
+    resize: none;
+    border-radius: 20px;
+    width: 270px;
+    font-family: $font-1;
+    background: $white;
+}
+textarea {
+&:focus {
+    box-shadow: 0 0 4px rgba(0, 22, 44, 0.1);
+}
+}
+  
+input[type="checkbox"] {
+    box-shadow: none;
+    width: 20px;
+    margin: 10px 0;
+}
+
+ 
+.error {
+    color: red;
+    font-weight: bold;
+}
+  
+.success {
+    color: green;
+    font-weight: bold;
+  }
+  
+.form-container {
+    display: flex;
+
+}

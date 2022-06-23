@@ -6,6 +6,7 @@ import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
 //Utilise un hook : on stock les composants signUpModal (page s'inscrire) et setSignUpModal (page se connecter)
+//On importe les props signin et signup
 const Log = ( props ) => {
   const [signUpModal, setSignUpModal] = useState(props.signup); //1er sur true
   const [signInModal, setSignInModal] = useState(props.signin); //2eme sur false
@@ -29,27 +30,27 @@ const Log = ( props ) => {
 
   //Renvoit le rendu visuel final
   return (
-    <div className="connection-form">
-      <div className="form-container">
-        <ul>
-          <li
-            onClick={handleModals}
-            id="register"
-            className={signUpModal ? "active-btn" : null}
-          >
-            S'inscrire
-          </li>
-          <li
-            onClick={handleModals}
-            id="login"
-            className={signInModal ? "active-btn" : null}
-          >
-            Se connecter
-          </li>
-        </ul>
-        {signUpModal && <SignUpForm />} 
-        {signInModal && <SignInForm />}
-      </div>
+    <div className="btn-principaux">
+      <ul>
+        <li
+          onClick={handleModals}
+          id="register"
+          //Si register est true (?), alors on active la class active-btn, si c'est false (:) on le déclare null
+          className={signUpModal ? "active-btn" : null}
+        >
+          S'inscrire
+        </li>
+        <li
+          onClick={handleModals}
+          id="login"
+          //Si login est true (?), alors on active la class active-btn, si c'est false (:) on le déclare null
+          className={signInModal ? "active-btn" : null}
+        >
+          Se connecter
+        </li>
+      </ul>
+      {signUpModal && <SignUpForm />} 
+      {signInModal && <SignInForm />}
     </div>
   );
 };
